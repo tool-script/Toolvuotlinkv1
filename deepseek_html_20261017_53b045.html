@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác Thực Key</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #34495e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 500px;
+        }
+        h2 { margin-top: 0; margin-bottom: 20px; color: #3498db; text-align: center; }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        button:hover { background-color: #2980b9; }
+        
+        /* CSS cho link lấy key */
+        .link-key {
+            color: #3498db;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .link-key:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Xác Thực Key</h2>
+        
+        <!-- Ô Key 3D -->
+        <label>
+            <a href="https://fnote.net/notes/8rp8KV" target="_blank" class="link-key">Bấm vào đây để lấy Key 3D</a>
+        </label>
+        <input type="text" id="key3d" placeholder="Dán Key 3D vào đây...">
+
+        <!-- Ô Key VV -->
+        <label>
+            <a href="https://fnote.net/notes/6gNv38" target="_blank" class="link-key">Bấm vào đây để lấy Key VV</a>
+        </label>
+        <input type="text" id="keyVV" placeholder="Dán Key VV vào đây...">
+
+        <button onclick="xacNhanKey()">Xác Thực</button>
+    </div>
+
+    <script>
+        function xacNhanKey() {
+            // Lấy giá trị người dùng nhập
+            var k3d = document.getElementById('key3d').value.trim();
+            var kvv = document.getElementById('keyVV').value.trim();
+
+            // ĐÂY LÀ NƠI BẠN ĐIỀN KEY ĐÚNG VÀO ĐỂ SO SÁNH
+            var key3dDung = "mkhuong-1dskqk239";
+            var keyVVDung = "mkhuong-vinhvi3n-ddmdk2";
+
+            if (k3d === "" || kvv === "") {
+                alert("Vui lòng nhập đầy đủ cả 2 Key!");
+                return;
+            }
+
+            // Kiểm tra xem key nhập vào có khớp với key đúng không
+            if (k3d === key3dDung && kvv === keyVVDung) {
+                alert("✅ Xác thực thành công!\nChào mừng bạn đã vào hệ thống.");
+                // Nếu muốn tự động chuyển hướng sang trang khác, xóa dấu // ở dòng dưới và thay link vào
+                // window.location.href = "link_trang_ban_muon_vao.html";
+            } else {
+                alert("❌ Lỗi: Key không đúng hoặc Key đã hết tác dụng!");
+            }
+        }
+    </script>
+
+</body>
+</html>
